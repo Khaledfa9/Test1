@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khaled's CalorAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': 'rgb(var(--color-primary) / <alpha-value>)',
+                        'primary-accent': 'rgb(var(--color-primary-accent) / <alpha-value>)',
+                        'background': 'rgb(var(--color-background) / <alpha-value>)',
+                        'card': 'rgb(var(--color-card) / <alpha-value>)',
+                        'border': 'rgb(var(--color-border) / <alpha-value>)',
+                        'text-primary': 'rgb(var(--color-text-primary) / <alpha-value>)',
+                        'text-secondary': 'rgb(var(--color-text-secondary) / <alpha-value>)',
+                        'success': 'rgb(var(--color-success) / <alpha-value>)',
+                        'danger': 'rgb(var(--color-danger) / <alpha-value>)',
+                        'info': 'rgb(var(--color-info) / <alpha-value>)',
+                        'warning': 'rgb(var(--color-warning) / <alpha-value>)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                         slideInUp: {
+                            '0%': { transform: 'translateY(100%)' },
+                            '100%': { transform: 'translateY(0)' },
+                        },
+                        shimmer: {
+                            '100%': { transform: 'translateX(100%)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+                        'slide-in-up': 'slideInUp 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards',
+                        'shimmer': 'shimmer 1.5s infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            :root {
+                /* Base Light Theme Colors */
+                --color-background: 249 249 249;
+                --color-card: 255 255 255;
+                --color-border: 238 238 238;
+                --color-text-primary: 28 28 28;
+                --color-text-secondary: 115 115 115;
+                --color-success: 74 192 124;
+                --color-danger: 239 68 68;
+                --color-info: 59 130 246;
+                --color-warning: 245 158 11;
+            }
+            .dark {
+                /* Base Dark Theme Colors */
+                --color-background: 18 18 18;
+                --color-card: 28 28 28;
+                --color-border: 45 45 45;
+                --color-text-primary: 245 245 245;
+                --color-text-secondary: 160 160 160;
+                --color-success: 52 160 100;
+                --color-danger: 220 50 50;
+                --color-info: 60 130 230;
+                --color-warning: 200 130 10;
+            }
+
+            /* Accent Color Themes */
+            .theme-green { --color-primary: 74 192 124; --color-primary-accent: 90 205 140; }
+            .dark.theme-green { --color-primary: 52 160 100; --color-primary-accent: 74 192 124; }
+
+            .theme-blue { --color-primary: 59 130 246; --color-primary-accent: 80 150 250; }
+            .dark.theme-blue { --color-primary: 60 130 230; --color-primary-accent: 80 150 250; }
+
+            .theme-rose { --color-primary: 244 63 94; --color-primary-accent: 248 85 115; }
+            .dark.theme-rose { --color-primary: 225 50 80; --color-primary-accent: 244 63 94; }
+
+            .theme-violet { --color-primary: 139 92 246; --color-primary-accent: 155 110 250; }
+            .dark.theme-violet { --color-primary: 120 80 220; --color-primary-accent: 139 92 246; }
+
+            body {
+                -webkit-tap-highlight-color: transparent;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                 background-color: rgb(var(--color-background));
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-background">
+    <div class="max-w-lg mx-auto bg-card dark:bg-background min-h-screen shadow-lg">
+      <div id="root"></div>
+    </div>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "react": "https://aistudiocdn.com/react@^19.2.0",
+            "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+            "react/": "https://aistudiocdn.com/react@^19.2.0/",
+            "vite": "https://aistudiocdn.com/vite@^7.1.12",
+            "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.0",
+            "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+            "framer-motion": "https://aistudiocdn.com/framer-motion@^12.1.0",
+            "recharts": "https://aistudiocdn.com/recharts@^2.12.7"
+          }
+        }
+    </script>
+    <script type="text/babel" data-type="module" data-presets="react,typescript" src="./index.tsx"></script>
+</body>
+</html>
